@@ -1,6 +1,8 @@
 import json
 import numpy as np
 
+
+
 def range_list(b,s):
     a = []
     for i in np.arange(b,s+0.1, 0.1):
@@ -8,7 +10,7 @@ def range_list(b,s):
     #print("BMI_list_ranged:", a)
     return a
 
-
+#calculation of BMI data
 def bmi(data,bmi_range):
     #BMI(kg/m) = mass(kg) / height(m)
     height_m = (data['HeightCm']/100)
@@ -19,7 +21,7 @@ def bmi(data,bmi_range):
     #print("range_checked_data  :",range_checked_data)
     return range_checked_data
 
-
+#Checking the range in BMI category
 def range_check(data,bmi_range):
     #print("input data for checking the range: ",data)
     total_calculated_data = {}
@@ -52,7 +54,7 @@ def range_check(data,bmi_range):
 
 
 
-
+#Analaysis of BMI data 
 def analaysis_of_data(total_calculated_data_list):
     Underweight_count, Normal_weight_count, Overweight_count, Moderately_obese_count, Severely_obese_count, Very_severely_obese_count = \
         [0, 0, 0, 0, 0, 0]
@@ -115,7 +117,7 @@ for i in input_data:
     #print(total_calculated_data_list)
     print("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 
-print("final_data:",total_calculated_data_list)
+print("final_data:",total_calculated_data_list) #printing the consolidated data
 
 
 
